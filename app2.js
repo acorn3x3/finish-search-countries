@@ -43,8 +43,6 @@ async function findCountries(name, continent) {
     // > Part A: Assign to state the :
     //      - error,
     //      - data (to the countries variable)
-    error = response.error;
-    countries = response.data;
 
     // > Part D: Assign to state the:
     //      - count (of db records)
@@ -67,8 +65,6 @@ function displayCountries() {
 
     for (const country of countries) {
         // > Part A: render and append to list
-        const countryEl = renderCountry(country);
-        countryList.append(countryEl);
     }
 }
 
