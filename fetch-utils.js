@@ -12,11 +12,7 @@ export async function getCountries(name, continent) {
     //   2. order by country name
     //   3. limit to 100 countries
 
-    let query = client
-        .from('countries')
-        .select('*', { count: 'exact' })
-        .limit(100)
-        .order('Country_Name');
+    let query = client.from('countries').select('*', { count: 'exact' }).limit(100).order('name');
 
     if (name) {
         // > Part C: add query for name
@@ -32,6 +28,11 @@ export async function getCountries(name, continent) {
 }
 
 export async function getContinents() {
+    let query = client.from('country_continents').select('*');
+    const response = await query;
+
+    ///???
+    return response;
     // > Part B: await client query from country_continents
     // (select all columns) and return response
 }
