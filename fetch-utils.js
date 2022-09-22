@@ -35,5 +35,5 @@ export async function getContinents() {
 
     return response;
     // > Part B: await client query from country_continents
-    // (select all columns) and return response
+    // (select all columns) and return responsea
 }
