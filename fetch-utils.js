@@ -33,7 +33,6 @@ export async function getContinents() {
     let query = client.from('country_continents').select('*');
     const response = await query;
 
-    ///???
     return response;
     // > Part B: await client query from country_continents
     // (select all columns) and return response
