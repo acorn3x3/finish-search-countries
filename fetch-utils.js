@@ -15,10 +15,12 @@ export async function getCountries(name, continent) {
     let query = client.from('countries').select('*', { count: 'exact' }).limit(100).order('name');
 
     if (name) {
+        query = query.ilike('name', `%${name}%`);
         // > Part C: add query for name
     }
 
     if (continent) {
+        query = query.eq('continent', continent);
         // > Part C: add query for continent
     }
 

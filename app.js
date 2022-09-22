@@ -25,7 +25,7 @@ window.addEventListener('load', async () => {
 
     // > Part B: await the call to get continents to get the response
     const continentsResponse = await getContinents(continents);
-    console.log('28', continentsResponse);
+
     // > Part B: Assign to state the:
     //      - error,
     //      - data (to the continents variable)
@@ -36,11 +36,11 @@ window.addEventListener('load', async () => {
         displayContinentOptions();
     }
 });
-console.log('here');
+
 async function findCountries(name, continent) {
     // > Part A: Call the service function that gets the countries
     const response = await getCountries(name, continent);
-    console.log(response);
+
     // > Part C: Add the name and continent arguments to getCountries
 
     // > Part A: Assign to state the :
@@ -62,6 +62,9 @@ searchForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const formData = new FormData(searchForm);
     // > Part C: Call findCountries with name and continent from formData
+    const name = formData.get('name');
+    const continent = formData.get('continent');
+    findCountries(name, continent);
 });
 
 /* Display Functions */
